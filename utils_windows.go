@@ -11,9 +11,9 @@ import (
 // Returns the length of an ICMP message, plus the IP packet header.
 func (p *Pinger) getMessageLength() int {
 	if p.ipv4 {
-		return p.Size + 8 + ipv4.HeaderLen
+		return p.Size + (8 + ipv4.HeaderLen) * 2
 	}
-	return p.Size + 8 + ipv6.HeaderLen
+	return p.Size + (8 + ipv4.HeaderLen) * 2
 }
 
 // Attempts to match the ID of an ICMP packet.
