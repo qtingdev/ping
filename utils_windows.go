@@ -13,7 +13,7 @@ func (p *Pinger) getMessageLength() int {
 	if p.ipv4 {
 		return p.Size + (8 + ipv4.HeaderLen) * 2
 	}
-	return p.Size + (8 + ipv4.HeaderLen) * 2
+	return p.Size + (8 + ipv6.HeaderLen) * 2
 }
 
 // Attempts to match the ID of an ICMP packet.
